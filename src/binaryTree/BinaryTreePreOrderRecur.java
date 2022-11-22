@@ -1,3 +1,10 @@
+package binaryTree;
+
+/**
+ * Preorder Traversal (VLR)
+ * To open a folder and display the names of its files.
+ * Then open some file(Folder), and repeating the process.
+ */
 public class BinaryTreePreOrderRecur {
 
     public BinaryTree.Node ready() {
