@@ -1,11 +1,11 @@
 public class BinaryTreePreOrderRecur {
 
-    public BinaryTreeContruct.Node ready() {
-        BinaryTreeContruct binaryTreeContruct = new BinaryTreeContruct();
-        return binaryTreeContruct.build();
+    public BinaryTree.Node ready() {
+        BinaryTree binaryTree = new BinaryTree();
+        return binaryTree.build();
     }
 
-    public void run(BinaryTreeContruct.Node node) {
+    public void run(BinaryTree.Node node) {
         if (node == null) {
             return;
         }

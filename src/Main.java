@@ -6,7 +6,7 @@ public class Main {
 
     public static void runBinaryTreePreOrderRecur() {
         BinaryTreePreOrderRecur binaryTreePreOrderRecur = new BinaryTreePreOrderRecur();
-        BinaryTreeContruct.Node node = binaryTreePreOrderRecur.ready();
+        BinaryTree.Node node = binaryTreePreOrderRecur.ready();
         binaryTreePreOrderRecur.run(node);
     }
 }

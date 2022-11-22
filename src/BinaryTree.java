@@ -1,4 +1,4 @@
-public class BinaryTreeContruct {
+public class BinaryTree {
     public class Node {
         public int value;
         public Node left;
@@ -7,7 +7,6 @@ public class BinaryTreeContruct {
             this.value = data;
         }
     }
-
 
     public Node build() {
 		Node head = new Node(5);
