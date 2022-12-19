@@ -7,6 +7,9 @@ public class Sort extends Array<int[]> {
         super(value);
     }
 
+    /**
+     *
+     */
     public int[] bubbleSort() {
         for (int i = 0; i < value.length; i++) {
             for (int j = 0; j < value.length - 1 - i; j++) {
@@ -24,6 +27,7 @@ public class Sort extends Array<int[]> {
      *
      */
     public int[] quickSort(int left, int right) {
+
         return null;
     }
 }
