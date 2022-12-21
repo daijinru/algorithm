@@ -1,5 +1,7 @@
 package Array;
 
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class DoublePtr extends Array<List<Integer>> {
@@ -8,7 +10,7 @@ public class DoublePtr extends Array<List<Integer>> {
     }
 
     /**
-     * Sum of two number for array sorted.
+     * Sum of two number for array sorted. O(n)
      * Case:
      * numbers = [1, 2, 3, 4], t = 4
      * i = 1, j = 4, sum = 5 > t
@@ -26,6 +28,54 @@ public class DoublePtr extends Array<List<Integer>> {
             }
         }
         return new int[]{i, j};
+    }
+
+
+    /**
+     * O(n^2) + O(nlogn) = O(n^2)
+     * Assuming: len(arr) = 5
+     * while (i < len(arr) - 2): because i + (j = i + 1)
+     * i = 0, j = 1, k = len(arr) - 1 = 4
+     * a = nums[i], b = nums[j], c = nums[k]
+     * ++j if a + b + c < 0
+     * --k if a + b + c > 0
+     *
+     */
+    public List<int[]> threeSum(int[] numbers) {
+        List<int[]> res = new LinkedList<>();
+        if (numbers.length >= 3) {
+            Arrays.sort(numbers);
+            int i = 0;
+            while (i < numbers.length - 2) {
+                twoSum(numbers, i, res);
+                // filter the same
+                int temp = numbers[i];
+                while (i < numbers.length && numbers[i] == temp) {
+                    ++i;
+                }
+            }
+        }
+        return res;
+    }
+
+    private void twoSum(int[] numbers, int i, List<int[]> result) {
+        int j = i + 1;
+        int k = numbers.length - 1;
+        while (i < k) {
+            if (numbers[i] + numbers[j] + numbers[k] == 0) {
+                result.add(new int[]{numbers[i], numbers[j], numbers[k]});
+
+                // filter the same
+                int temp = numbers[j];
+                while (numbers[j] == temp && j < k) {
+                    ++j;
+                }
+            } else if (numbers[i] + numbers[j] + numbers[k] < 0) {
+                ++j;
+            } else {
+                --k;
+            }
+        }
     }
 
     /**
@@ -51,4 +101,6 @@ public class DoublePtr extends Array<List<Integer>> {
         }
         return value.size();
     }
+
+
 }
