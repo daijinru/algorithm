@@ -1,4 +1,4 @@
-package Array;
+package array;
 
 public class Array<T extends Object> {
     public T value;

@@ -1,6 +1,4 @@
-package Array;
-
-import java.util.List;
+package array;
 
 public class Sort extends Array<int[]> {
     public Sort(int[] value) {
