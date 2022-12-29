@@ -8,29 +8,39 @@ public class QuickSort extends Sort<Integer> {
         super(numbers);
     }
 
-    public Integer end;
-    public Integer start;
-
-    public void run() {
-        this.quickSort(this.numbers, start, end);
+    public QuickSort() {
+        super();
     }
 
-    public void quickSort(Integer[] numbers, Integer start, Integer end) {
+    public Integer[] run() {
+        return this.quickSort(this.numbers, 0, this.numbers.length - 1);
+    }
+
+    public Integer[] run(Integer start, Integer end) {
+        return this.quickSort(this.numbers, start, end);
+    }
+
+    public Integer[] quickSort(Integer[] numbers, Integer start, Integer end) {
         if (end > start) {
-            Integer pivot = partition(this.numbers, start, end);
-            quickSort(this.numbers, start, pivot - 1);
-            quickSort(this.numbers, pivot + 1, end);
+            Integer pivot = partition(numbers, start, end, getRandom(start, end));
+            quickSort(numbers, start, pivot - 1);
+            quickSort(numbers, pivot + 1, end);
         }
+        return numbers;
     }
 
-    public Integer partition(Integer[] numbers, Integer start, Integer end) {
-        Integer random = new Random().nextInt(end - start + 1) + start;
+    public Integer getRandom(Integer start, Integer end) {
+        return new Random().nextInt(end - start + 1) + start;
+    }
+
+    public Integer partition(Integer[] numbers, Integer start, Integer end, Integer random) {
+        swap(numbers, random, end);
 
         Integer small = start - 1;
         for (int i = start; i < end; i++) {
             if (numbers[i] < numbers[end]) {
                 small++;
-                swap(numbers, random, end);
+                swap(numbers, i, small);
             }
         }
 

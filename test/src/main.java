@@ -10,7 +10,7 @@ public class main {
         for (Failure failure : result.getFailures()) {
             System.out.println(
                     "Test Failed: \n" +
-                    failure.toString()
+                    failure.toString() + '\n'
             );
         }
         System.out.println(

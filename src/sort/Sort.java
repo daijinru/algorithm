@@ -8,5 +8,8 @@ abstract public class Sort<T> {
         this.numbers = numbers;
     }
 
-    abstract void run();
+    public Sort() {
+    }
+
+    abstract T[] run();
 }
