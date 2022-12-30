@@ -4,15 +4,24 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Subsets {
-    private Integer[] numbers;
+    public Integer[] numbers;
     public Subsets (Integer[] numbers) {
         this.numbers = numbers;
     }
+
+    public Subsets () {}
 
     public List<List<Integer>> run() {
         List<List<Integer>> result = new LinkedList<>();
         if (this.numbers.length == 0) return result;
         helper(this.numbers, 0, new LinkedList<>(), result);
+        return result;
+    }
+
+    public List<List<Integer>> run (Integer[] numbers) {
+        List<List<Integer>> result = new LinkedList<>();
+        if (numbers.length == 0) return result;
+        helper(numbers, 0, new LinkedList<>(), result);
         return result;
     }
 

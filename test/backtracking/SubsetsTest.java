@@ -34,8 +34,6 @@ public class SubsetsTest {
         expected.add(new LinkedList<>(Arrays.asList(2)));
         expected.add(new LinkedList<>(Arrays.asList(1)));
         expected.add(new LinkedList<>(Arrays.asList(1, 2)));
-        System.out.println(expected);
-        System.out.println(actual);
         assertArrayEquals(expected.toArray(), actual.toArray());
     }
 
@@ -49,5 +47,13 @@ public class SubsetsTest {
         List<List<Integer>> actual1 = new LinkedList<>();
         actual1.add(new LinkedList<>(Arrays.asList()));
         assertArrayEquals(result1.toArray(), actual1.toArray());
+
+        // Test2
+        Integer[] numbers2 = new Integer[]{1};
+        List<List<Integer>> result2 = new LinkedList<>();
+        List<List<Integer>> expected1 = new LinkedList<>();
+        expected1.add(new LinkedList<>(Arrays.asList()));
+        expected1.add(new LinkedList<>(Arrays.asList(1)));
+        assertArrayEquals(expected1.toArray(), subsets.run(numbers2).toArray());
     }
 } 
