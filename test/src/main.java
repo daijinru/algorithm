@@ -2,6 +2,7 @@ package src;
 
 import backtracking.Subsets;
 import backtracking.SubsetsTest;
+import backtracking.TopKFrequentTest;
 import org.junit.runner.*;
 import org.junit.runner.notification.Failure;
 import sort.QuickSortTest;
@@ -10,7 +11,8 @@ public class main {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(
                 QuickSortTest.class,
-                SubsetsTest.class
+                SubsetsTest.class,
+                TopKFrequentTest.class
         );
         for (Failure failure : result.getFailures()) {
             System.out.println(
