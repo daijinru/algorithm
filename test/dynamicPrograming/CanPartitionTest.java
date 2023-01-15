@@ -1,8 +1,9 @@
-package test.dynamicPrograming; 
+package dynamicPrograming;
 
 import org.junit.Test; 
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
+import static org.junit.Assert.*;
 
 /** 
 * CanPartition Tester. 
@@ -21,25 +22,26 @@ public void before() throws Exception {
 public void after() throws Exception { 
 } 
 
-/** 
-* 
-* Method: run() 
-* 
-*/ 
 @Test
 public void testRun() throws Exception { 
-//TODO: Test goes here... 
+    Integer[] test = new Integer[]{1, 2, 3, 5};
+    CanPartition canPartition = new CanPartition(test);
+    boolean res = canPartition.run();
+    assertFalse(res);
+
+    Integer[] test2 = new Integer[]{3, 4, 1};
+    CanPartition canPartition1 = new CanPartition(test2);
+    assertTrue(canPartition1.run());
+
+    Integer[] test3 = new Integer[]{3, 4, 2};
+    CanPartition canPartition2 = new CanPartition(test3);
+    assertFalse(canPartition2.run());
 } 
 
-/** 
-* 
-* Method: subsetSum(Integer[] numbers, Integer target) 
-* 
-*/ 
 @Test
-public void testSubsetSum() throws Exception { 
-//TODO: Test goes here... 
-} 
+public void testSubsetSum() throws Exception {
+
+}
 
 
 } 

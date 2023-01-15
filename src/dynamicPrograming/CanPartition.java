@@ -16,7 +16,7 @@ public class CanPartition {
     }
 
     public boolean subsetSum(Integer[] numbers, Integer target) {
-        boolean[][] dp = new boolean[numbers.length + 1][target - 1];
+        boolean[][] dp = new boolean[numbers.length + 1][target + 1];
         for (int i = 0; i <= numbers.length; i++) {
             dp[i][0] = true;
         }
