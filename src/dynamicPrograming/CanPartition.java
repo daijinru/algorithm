@@ -16,20 +16,22 @@ public class CanPartition {
     }
 
     public boolean subsetSum(Integer[] numbers, Integer target) {
-        boolean[][] dp = new boolean[numbers.length + 1][target + 1];
-        for (int i = 0; i <= numbers.length; i++) {
+        boolean[][] dp = new boolean[numbers.length][target + 1];
+        for (int i = 0; i <= numbers.length - 1; i++) {
             dp[i][0] = true;
         }
 
-        for (int i = 1; i <= numbers.length; i++) {
+        for (int i = 1; i < numbers.length; i++) {
             for (int j = 1; j <= target; j++) {
+
                 dp[i][j] = dp[i - 1][j];
-                if (!dp[i][j] && j >= numbers[i - 1]) {
-                    dp[i][j] = dp[i - 1][j - numbers[i - 1]];
+
+                if (!dp[i][j] && j >= numbers[i]) {
+                    dp[i][j] = dp[i - 1][j - numbers[i]];
                 }
             }
         }
-
-        return dp[numbers.length][target];
+        return dp[numbers.length - 1][target];
     }
 }
+

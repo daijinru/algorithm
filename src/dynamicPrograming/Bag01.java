@@ -30,7 +30,6 @@ public class Bag01 {
             this.dp.get(0).set(j, this.value.get(0));
         }
 
-
         for (int i = 1; i < weight.size(); i ++) {
             for (int j = 1; j <= bagWeight; j ++) {
                 if (j < weight.get(i)) {

@@ -26,8 +26,7 @@ public void after() throws Exception {
 public void testRun() throws Exception { 
     Integer[] test = new Integer[]{1, 2, 3, 5};
     CanPartition canPartition = new CanPartition(test);
-    boolean res = canPartition.run();
-    assertFalse(res);
+    assertFalse(canPartition.run());
 
     Integer[] test2 = new Integer[]{3, 4, 1};
     CanPartition canPartition1 = new CanPartition(test2);
