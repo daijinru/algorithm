@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 * @since <pre>1ÔÂ 17, 2023</pre> 
 * @version 1.0 
 */ 
-public class Bag01Test { 
+public class Pack01Test {
 
 @Before
 public void before() throws Exception { 
@@ -30,21 +30,21 @@ public void after() throws Exception {
 */ 
     @Test
     public void testRun() throws Exception {
-        Bag01 bag01 = new Bag01(
+        Pack01 bag01 = new Pack01(
                 new Integer[]{1, 3, 4},
                 new Integer[]{15, 20, 30},
                 4
         );
         assertEquals(new Integer(35), bag01.run());
 
-        Bag01 bag02 = new Bag01(
+        Pack01 bag02 = new Pack01(
                 new Integer[]{1, 3, 4},
                 new Integer[]{15, 20, 30},
                 7
         );
         assertEquals(new Integer(50), bag02.run());
 
-        Bag01 bag03 = new Bag01(
+        Pack01 bag03 = new Pack01(
                 new Integer[]{1, 3, 4},
                 new Integer[]{15, 20, 30},
                 3
