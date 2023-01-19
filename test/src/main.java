@@ -2,9 +2,7 @@ package src;
 
 import backtracking.SubsetsTest;
 import backtracking.TopKFrequentTest;
-import dynamicPrograming.CanPartitionTest;
-import dynamicPrograming.Pack01Test;
-import dynamicPrograming.PackCompleteTest;
+import dynamicPrograming.*;
 import org.junit.runner.*;
 import org.junit.runner.notification.Failure;
 import sort.QuickSortTest;
@@ -17,7 +15,8 @@ public class main {
                 TopKFrequentTest.class,
                 CanPartitionTest.class,
                 Pack01Test.class,
-                PackCompleteTest.class
+                PackCompleteTest.class,
+                PackMultipleTest.class
         );
         for (Failure failure : result.getFailures()) {
             System.out.println(
