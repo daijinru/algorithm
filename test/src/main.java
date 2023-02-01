@@ -16,7 +16,8 @@ public class main {
                 CanPartitionTest.class,
                 Pack01Test.class,
                 PackCompleteTest.class,
-                PackMultipleTest.class
+                PackMultipleTest.class,
+                MinCostClimbingStairsTest.class
         );
         for (Failure failure : result.getFailures()) {
             System.out.println(
