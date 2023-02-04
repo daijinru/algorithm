@@ -17,7 +17,8 @@ public class main {
                 Pack01Test.class,
                 PackCompleteTest.class,
                 PackMultipleTest.class,
-                MinCostClimbingStairsTest.class
+                MinCostClimbingStairsTest.class,
+                HouseRobTest.class
         );
         for (Failure failure : result.getFailures()) {
             System.out.println(
