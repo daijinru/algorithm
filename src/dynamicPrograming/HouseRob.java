@@ -5,16 +5,16 @@ import utils.ArrayUtil;
 import java.util.Vector;
 
 public class HouseRob extends DynamicPrograming<Integer> {
-    public HouseRob(int[] houses) {
+    public HouseRob(int[] houses) throws Exception {
         super(ArrayUtil.IntsToIntegers(houses));
     }
 
     @Override
     void initial() {
-        for (int i = 0; i < this.numbers.length; i++) {
-            this.dp.add(i, 0);
+        this.insert(0, this.numbers[0]);
+        if (this.numbers.length > 1) {
+            this.insert(1, Math.max(this.numbers[0], this.numbers[1]));
         }
-        this.dp.set(0, this.numbers[0]);
     }
 
     /**
@@ -23,17 +23,28 @@ public class HouseRob extends DynamicPrograming<Integer> {
      */
     @Override
     public Integer STE(int i) {
-        return Math.max(this.dp.get(i - 1), this.dp.get(i - 2) + this.numbers[i]);
+        return Math.max(this.get(i - 1), this.get(i - 2) + this.numbers[i]);
     }
 
     public int run() {
-        if (this.numbers.length < 1) return 0;
-        if (this.numbers.length > 1) {
-            this.dp.set(1, Math.max(this.numbers[0], this.numbers[1]));
-        }
         for (int i = 2; i < this.numbers.length; i++) {
-            this.dp.set(i, this.STE(i));
+            this.insert(i, this.STE(i));
         }
-        return this.dp.get(this.numbers.length - 1);
+        return this.get(this.numbers.length - 1);
+    }
+
+    /**
+     * dp of len 2 to save values of f(i - 1) and f(i - 2).
+     * And the result f(i) is written to f(i - 2).
+     */
+    public Integer STE_O1(int i) {
+        return Math.max(this.get((i - 1) % 2), this.get((i - 2) % 2) + this.numbers[i]);
+    }
+
+    public int run_O1() {
+        for (int i = 2; i < this.numbers.length; i++) {
+            this.insert(i % 2, this.STE_O1(i));
+        }
+        return this.get((this.numbers.length - 1) % 2);
     }
 }

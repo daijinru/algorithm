@@ -51,7 +51,10 @@ public void testSTE() throws Exception {
 public void testRun() throws Exception { 
     HouseRob houseRob = new HouseRob(new int[]{2, 3, 4, 5, 3});
     assertEquals(9, houseRob.run());
-} 
+
+    HouseRob houseRob1 = new HouseRob(new int[]{2, 3, 4, 5, 3});
+    assertEquals(9, houseRob1.run_O1());
+}
 
 
 } 
