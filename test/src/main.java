@@ -6,6 +6,7 @@ import dynamicPrograming.*;
 import org.junit.runner.*;
 import org.junit.runner.notification.Failure;
 import sort.QuickSortTest;
+import string.StringUtilsTest;
 
 public class main {
     public static void main(String[] args) {
@@ -18,7 +19,8 @@ public class main {
                 PackCompleteTest.class,
                 PackMultipleTest.class,
                 MinCostClimbingStairsTest.class,
-                HouseRobTest.class
+                HouseRobTest.class,
+                StringUtilsTest.class
         );
         for (Failure failure : result.getFailures()) {
             System.out.println(
