@@ -18,19 +18,18 @@ public class Subsets {
         return result;
     }
 
-    public List<List<Integer>> run (Integer[] numbers) {
-        List<List<Integer>> result = new LinkedList<>();
-        if (numbers.length == 0) return result;
-        helper(numbers, 0, new LinkedList<>(), result);
-        return result;
-    }
-
+    /**
+     * help recursive
+     * @param numbers input array
+     * @param index index of input array
+     * @param subset subset, which empty first
+     * @param result return result
+     */
     public void helper (Integer[] numbers, Integer index, LinkedList<Integer> subset, List<List<Integer>> result) {
-        if (index == numbers.length) {
+        if (index >= numbers.length) {
             result.add(new LinkedList<>(subset));
-        } else if (index < numbers.length) {
+        } else {
             helper(numbers, index + 1, subset, result);
-
             subset.add(numbers[index]);
             helper(numbers, index + 1, subset, result);
             subset.removeLast();
