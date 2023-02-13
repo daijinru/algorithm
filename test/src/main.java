@@ -1,5 +1,6 @@
 package src;
 
+import backtracking.CombineTest;
 import backtracking.SubsetsTest;
 import backtracking.TopKFrequentTest;
 import dynamicPrograming.*;
@@ -12,6 +13,7 @@ public class main {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(
                 QuickSortTest.class,
+                CombineTest.class,
                 SubsetsTest.class,
                 TopKFrequentTest.class,
                 CanPartitionTest.class,
