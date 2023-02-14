@@ -1,5 +1,6 @@
 package src;
 
+import backtracking.CombinationRepeatedTest;
 import backtracking.CombineTest;
 import backtracking.SubsetsTest;
 import backtracking.TopKFrequentTest;
@@ -16,6 +17,7 @@ public class main {
                 CombineTest.class,
                 SubsetsTest.class,
                 TopKFrequentTest.class,
+                CombinationRepeatedTest.class,
                 CanPartitionTest.class,
                 Pack01Test.class,
                 PackCompleteTest.class,
