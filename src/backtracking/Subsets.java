@@ -3,36 +3,46 @@ package backtracking;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Subsets {
-    public Integer[] numbers;
-    public Subsets (Integer[] numbers) {
-        this.numbers = numbers;
+public class Subsets extends Backtracking<int[], LinkedList<Integer>, LinkedList<LinkedList<Integer>>>{
+    public int[] input;
+    public Subsets (int[] input) {
+        this.input = input;
     }
 
     public Subsets () {}
 
-    public List<List<Integer>> run() {
-        List<List<Integer>> result = new LinkedList<>();
-        if (this.numbers.length == 0) return result;
-        helper(this.numbers, 0, new LinkedList<>(), result);
+    public LinkedList<LinkedList<Integer>> run() {
+        LinkedList<LinkedList<Integer>> result = new LinkedList<>();
+        if (this.input.length == 0) return result;
+        helper(this.input, 0, new LinkedList<>(), result);
         return result;
     }
 
+    @Override
+    public Choice<int[], LinkedList<Integer>, LinkedList<LinkedList<Integer>>> choice(Object... args) {
+        return (int[] input, int i, LinkedList<Integer> subsets, LinkedList<LinkedList<Integer>> result) -> {
+            this.helper(input, i + 1, subsets, result);
+
+            subsets.add(input[i]);
+            this.helper(input, i + 1, subsets, result);
+
+            subsets.removeLast();
+        };
+    }
+
+
     /**
      * help recursive
-     * @param numbers input array
+     * @param input input array
      * @param index index of input array
      * @param subset subset, which empty first
      * @param result return result
      */
-    public void helper (Integer[] numbers, Integer index, LinkedList<Integer> subset, List<List<Integer>> result) {
-        if (index >= numbers.length) {
+    public void helper (int[] input, Integer index, LinkedList<Integer> subset, LinkedList<LinkedList<Integer>> result) {
+        if (index >= input.length) {
             result.add(new LinkedList<>(subset));
         } else {
-            helper(numbers, index + 1, subset, result);
-            subset.add(numbers[index]);
-            helper(numbers, index + 1, subset, result);
-            subset.removeLast();
+            this.choice().execute(input, index, subset, result);
         }
 
     }

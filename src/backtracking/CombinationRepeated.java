@@ -6,7 +6,7 @@ import java.util.LinkedList;
  * Allow repeated selection of elements,
  * and find out all combinations its sum of elements which equal to the specified number.
  */
-public class CombinationRepeated extends Backtracking<LinkedList<LinkedList<Integer>>> {
+public class CombinationRepeated extends Backtracking<int[], LinkedList<Integer>, LinkedList<LinkedList<Integer>>> {
     private int[] input;
     private int target;
 
@@ -22,6 +22,16 @@ public class CombinationRepeated extends Backtracking<LinkedList<LinkedList<Inte
         return result;
     }
 
+    @Override
+    public Choice<int[], LinkedList<Integer>, LinkedList<LinkedList<Integer>>> choice(Object... args) {
+        return (input, i, subsets, result) -> {
+            this.helper(input, i + 1, (int)args[0], subsets, result);
+            subsets.add(input[i]);
+            this.helper(input, i, (int)args[0] - input[i], subsets, result);
+            subsets.removeLast();
+        };
+    }
+
     public void helper(int[] input, int i, int target,
                        LinkedList<Integer> subsets,
                        LinkedList<LinkedList<Integer>> result
@@ -30,12 +40,7 @@ public class CombinationRepeated extends Backtracking<LinkedList<LinkedList<Inte
             // do not add subset directly, it is just a reference
             result.add(new LinkedList<>(subsets));
         } else if (target > 0 && i < input.length) {
-            helper(input, i + 1, target, subsets, result);
-
-            subsets.add(input[i]);
-            helper(input, i, target - input[i], subsets, result);
-
-            subsets.removeLast();
+            this.choice(target).execute(input, i, subsets, result);
         }
     }
 }

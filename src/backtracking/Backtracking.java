@@ -1,7 +1,7 @@
 package backtracking;
 
-abstract public class Backtracking<T> {
-    abstract public T run();
+abstract public class Backtracking<I, S, R> {
+    abstract public R run();
 
-//    abstract void helper();
+    abstract public Choice<I, S, R> choice(Object... args);
 }

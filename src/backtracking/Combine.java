@@ -2,10 +2,13 @@ package backtracking;
 
 import java.util.LinkedList;
 
-public class Combine {
-    private int n;
-    private int k;
-    public Combine(int n, int k) {
+/**
+ * Find all combinations of k numbers from 1 to n.
+ */
+public class Combine extends Backtracking<Integer, LinkedList<Integer>, LinkedList<LinkedList<Integer>>> {
+    private Integer n;
+    private Integer k;
+    public Combine(Integer n, Integer k) {
         this.n = n;
         this.k = k;
     }
@@ -16,26 +19,25 @@ public class Combine {
         return result;
     }
 
-    /**
-     * Find all combinations of k numbers from 1 to n.
-     * @param n the last one
-     * @param k numbers limit
-     * @param i the Array ptr
-     * @param subsets
-     * @param result
-     */
-    public void helper(int n, int k, int i, LinkedList<Integer> subsets, LinkedList<LinkedList<Integer>> result) {
-        if (subsets.size() == k) {
-            result.add(new LinkedList<>(subsets));
-        } else {
+    @Override
+    public Choice<Integer, LinkedList<Integer>, LinkedList<LinkedList<Integer>>> choice(Object... args) {
+        return (Integer n, int i, LinkedList<Integer> subsets, LinkedList<LinkedList<Integer>> result) -> {
             if (i <= n) {
-                helper(n, k, i + 1, subsets, result);
+                this.helper(n, (Integer) args[0], i + 1, subsets, result);
 
                 subsets.add(i);
-                helper(n, k, i + 1, subsets, result);
+                this.helper(n, (Integer) args[0], i + 1, subsets, result);
 
                 subsets.removeLast();
             }
+        };
+    }
+
+    public void helper(Integer n, Integer k, int i, LinkedList<Integer> subsets, LinkedList<LinkedList<Integer>> result) {
+        if (subsets.size() == k) {
+            result.add(new LinkedList<>(subsets));
+        } else {
+            this.choice(k).execute(n, i, subsets, result);
         }
     }
 }
