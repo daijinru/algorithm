@@ -24,6 +24,7 @@ public class main {
                 PackMultipleTest.class,
                 MinCostClimbingStairsTest.class,
                 HouseRobTest.class,
+                FactorialTest.class,
                 StringUtilsTest.class
         );
         for (Failure failure : result.getFailures()) {
