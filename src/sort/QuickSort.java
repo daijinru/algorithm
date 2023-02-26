@@ -20,6 +20,12 @@ public class QuickSort extends Sort<Integer> {
         return this.quickSort(this.numbers, start, end);
     }
 
+    /**
+     * In the non-sorted array, randomly to get a number, then partition:
+     * 1) If smaller than the number move to the left,
+     * 2) else move to the right.
+     * then continue the steps above.
+     */
     public Integer[] quickSort(Integer[] numbers, Integer start, Integer end) {
         if (end > start) {
             Integer pivot = partition(numbers, start, end, getRandom(start, end));

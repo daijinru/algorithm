@@ -1,8 +1,6 @@
 package sort;
 
 import org.junit.Test;
-import org.junit.Before; 
-import org.junit.After;
 
 import static org.junit.Assert.*;
 
@@ -26,14 +24,6 @@ public class QuickSortTest {
 
     private QuickSort getInstance(Integer[] numbers) {
         return new QuickSort(numbers);
-    }
-
-    @Before
-    public void before() throws Exception {
-    }
-
-    @After
-    public void after() throws Exception {
     }
 
     /**
