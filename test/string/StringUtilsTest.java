@@ -14,4 +14,12 @@ public class StringUtilsTest {
         assertFalse(StringUtils.isPalindrome("Hele elhe"));
         assertTrue(StringUtils.isPalindrome("Hele eleH"));
     }
+
+    @Test
+    public void testValidPalindrome() throws Exception {
+        assertTrue(StringUtils.validPalindrome("abca"));
+        assertTrue(StringUtils.validPalindrome("abcdcba"));
+        assertFalse(StringUtils.validPalindrome("abeda"));
+        assertFalse(StringUtils.validPalindrome("abcccdea"));
+    }
 } 
