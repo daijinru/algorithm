@@ -5,5 +5,6 @@ receiveJsonpData({
 {"label": "Timestamp", "type": "string"},
 {"label": "testRun", "type": "string"} ],
 "rows": [
-{"c": [{"v": "4"}, {"v": "AddBenchMark"}, {"v": "2023-02-28 23:02:51.34"}, {"v": 0.014}]}
+{"c": [{"v": "4"}, {"v": "AddBenchMark"}, {"v": "2023-02-28 23:02:51.34"}, {"v": 0.014}]},
+{"c": [{"v": "7"}, {"v": "AddBenchMark"}, {"v": "2023-02-28 23:11:17.896"}, {"v": 0.012}]}
 ]});
