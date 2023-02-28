@@ -1,0 +1,9 @@
+receiveJsonpData({
+"cols": [
+{"label": "Run", "type": "string"},
+{"label": "Custom key", "type": "string"},
+{"label": "Timestamp", "type": "string"},
+{"label": "testRun", "type": "string"} ],
+"rows": [
+{"c": [{"v": "1"}, {"v": "AddBenchMark"}, {"v": "2023-02-28 22:57:08.838"}, {"v": 0.014}]}
+]});
