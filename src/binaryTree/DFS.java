@@ -1,10 +1,9 @@
 package binaryTree;
 
 /**
- * R Root TreeNode
- * S List Contain TreeNodes
+ * T Root TreeNode
  */
 @FunctionalInterface
-public interface DFS<R, S> {
-    void execute(R root, S nodes);
+public interface DFS<T> {
+    T execute(T node);
 }

@@ -1,6 +1,11 @@
 package binaryTree;
 
-public abstract class BinaryTree<N, T, R> {
+/**
+ * N TreeNode
+ * T List(or?) TreeNode
+ * R result
+ */
+public abstract class BinaryTree<T, R> {
     abstract public R run();
-    abstract public DFS<T, N> DFS();
+    public abstract DFS<TreeNode<Integer>> DFS(Object... args);
 }
