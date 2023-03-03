@@ -1,0 +1,14 @@
+receiveJsonpData({
+"cols": [
+{"label": "Run", "type": "string"},
+{"label": "Custom key", "type": "string"},
+{"label": "Timestamp", "type": "string"},
+{"label": "testRun", "type": "string"} ],
+"rows": [
+{"c": [{"v": "20"}, {"v": "AddBenchMark"}, {"v": "2023-03-03 23:08:37.837"}, {"v": 0.016}]},
+{"c": [{"v": "21"}, {"v": "AddBenchMark"}, {"v": "2023-03-03 23:09:39.923"}, {"v": 0.017}]},
+{"c": [{"v": "22"}, {"v": "AddBenchMark"}, {"v": "2023-03-03 23:10:01.628"}, {"v": 0.016}]},
+{"c": [{"v": "23"}, {"v": "AddBenchMark"}, {"v": "2023-03-03 23:10:10.023"}, {"v": 0.016}]},
+{"c": [{"v": "24"}, {"v": "AddBenchMark"}, {"v": "2023-03-03 23:10:17.602"}, {"v": 0.02}]},
+{"c": [{"v": "25"}, {"v": "AddBenchMark"}, {"v": "2023-03-03 23:10:24.01"}, {"v": 0.017}]}
+]});

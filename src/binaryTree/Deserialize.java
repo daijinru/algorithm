@@ -1,9 +1,14 @@
 package binaryTree;
 
+/**
+ * Serialize and deserialize the binary-tree by Preorder Traversal.
+ */
 public class Deserialize extends BinaryTree<TreeNode<Integer>, TreeNode<Integer>>{
     public String in;
-    public Deserialize(String in) {
+    public String space;
+    public Deserialize(String in, String space) {
         this.in = in;
+        this.space = space;
     }
     @Override
     public TreeNode<Integer> run() {
@@ -16,7 +21,7 @@ public class Deserialize extends BinaryTree<TreeNode<Integer>, TreeNode<Integer>
     public TreeNode<Integer> recursive(String[] strs, int[] i) {
         String str = strs[i[0]];
         i[0]++;
-        if (str.equals("#")) {
+        if (str.equals(this.space)) {
             return null;
         }
 
@@ -33,5 +38,12 @@ public class Deserialize extends BinaryTree<TreeNode<Integer>, TreeNode<Integer>
             node.right = this.recursive(strs, i);
             return node;
         };
+    }
+
+    public static String serialize(TreeNode<Integer> node, String space) {
+        if (node == null) return space;
+        String leftStr = serialize(node.left, space);
+        String rightStr = serialize(node.right, space);
+        return String.valueOf(node.val) + "," + leftStr + "," + rightStr;
     }
 }

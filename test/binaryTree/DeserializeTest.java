@@ -1,6 +1,10 @@
 package binaryTree;
 
-import org.junit.Test; 
+import com.carrotsearch.junitbenchmarks.BenchmarkOptions;
+import org.junit.Test;
+import src.TestBase;
+
+import static org.junit.Assert.*;
 
 /** 
 * Deserialize Tester. 
@@ -9,16 +13,19 @@ import org.junit.Test;
 * @since <pre>3ÔÂ 3, 2023</pre> 
 * @version 1.0 
 */ 
-public class DeserializeTest {
+public class DeserializeTest extends TestBase {
 
-/** 
-* 
-* Method: run() 
-* 
-*/ 
+    /**
+    *
+    * Method: run()
+    *
+    */
     @Test
+    @BenchmarkOptions(concurrency = 2, warmupRounds = 0, benchmarkRounds = 5)
     public void testRun() throws Exception {
-        Deserialize deserialize = new Deserialize("6,6,#,#,6,6,#,#,6,#,#");
-        System.out.println(deserialize.run().toString());
+        String in = "6,6,#,#,6,6,#,#,6,#,#";
+        Deserialize deserialize = new Deserialize(in, "#");
+        String serialize = Deserialize.serialize(deserialize.run(), "#");
+        assertEquals(in, serialize);
     }
 } 
