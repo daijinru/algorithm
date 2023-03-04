@@ -1,7 +1,6 @@
 package binaryTree;
 
 /**
- * N TreeNode
  * T List(or?) TreeNode
  * R result
  */

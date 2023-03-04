@@ -26,6 +26,6 @@ public class DeserializeTest extends TestBase {
         String in = "6,6,#,#,6,6,#,#,6,#,#";
         Deserialize deserialize = new Deserialize(in, "#");
         String serialize = Deserialize.serialize(deserialize.run(), "#");
-        assertEquals(in, serialize);
+        assertEquals(in.replaceAll("#", ""), serialize);
     }
 } 

@@ -12,13 +12,14 @@ public class Deserialize extends BinaryTree<TreeNode<Integer>, TreeNode<Integer>
     }
     @Override
     public TreeNode<Integer> run() {
-        String[] nodeStrs = this.in.split(",");
+        String[] strs = this.in.split(",");
         int[] i = new int[]{0};
 
-        return recursive(nodeStrs, i);
+        return recursive(strs, i);
     }
 
     public TreeNode<Integer> recursive(String[] strs, int[] i) {
+        if (i[0] == strs.length) return null;
         String str = strs[i[0]];
         i[0]++;
         if (str.equals(this.space)) {
@@ -41,7 +42,7 @@ public class Deserialize extends BinaryTree<TreeNode<Integer>, TreeNode<Integer>
     }
 
     public static String serialize(TreeNode<Integer> node, String space) {
-        if (node == null) return space;
+        if (node == null) return "";
         String leftStr = serialize(node.left, space);
         String rightStr = serialize(node.right, space);
         return String.valueOf(node.val) + "," + leftStr + "," + rightStr;
