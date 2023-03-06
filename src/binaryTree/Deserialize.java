@@ -2,6 +2,17 @@ package binaryTree;
 
 /**
  * Serialize and deserialize the binary-tree by Preorder Traversal.
+ * eg_01: 1,3,#,#,5,3,#,#,7,#,#
+ * will serialized:
+ *             1
+ *         3      5
+ *              3   7
+ * eg_02: 1,2,#,#,4,5,#,#,3,6,#,#,7,#,#
+ * should serialized:
+ *             1
+ *         2      4
+ *             5     3
+ *                 6   7
  */
 public class Deserialize extends BinaryTree<TreeNode<Integer>, TreeNode<Integer>>{
     public String in;
@@ -19,13 +30,11 @@ public class Deserialize extends BinaryTree<TreeNode<Integer>, TreeNode<Integer>
     }
 
     public TreeNode<Integer> recursive(String[] strs, int[] i) {
-        if (i[0] == strs.length) return null;
         String str = strs[i[0]];
         i[0]++;
         if (str.equals(this.space)) {
             return null;
         }
-
         TreeNode<Integer> treeNode = new TreeNode<>(Integer.valueOf(str));
         return this.DFS(strs, i).execute(treeNode);
     }
@@ -42,9 +51,16 @@ public class Deserialize extends BinaryTree<TreeNode<Integer>, TreeNode<Integer>
     }
 
     public static String serialize(TreeNode<Integer> node, String space) {
-        if (node == null) return "";
+        if (node == null) return space;
         String leftStr = serialize(node.left, space);
         String rightStr = serialize(node.right, space);
-        return String.valueOf(node.val) + "," + leftStr + "," + rightStr;
+        String out = String.valueOf(node.val);
+        if (leftStr != "") {
+            out += "," + leftStr;
+        }
+        if (rightStr != "") {
+            out += "," + rightStr;
+        }
+        return out;
     }
 }
