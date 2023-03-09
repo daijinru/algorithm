@@ -7,13 +7,11 @@ import backtracking.TopKFrequentTest;
 import dynamicPrograming.*;
 import org.junit.runner.*;
 import org.junit.runner.notification.Failure;
-import sort.QuickSortTest;
 import string.StringUtilsTest;
 
 public class main {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(
-                QuickSortTest.class,
                 CombineTest.class,
                 SubsetsTest.class,
                 TopKFrequentTest.class,

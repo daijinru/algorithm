@@ -1,0 +1,17 @@
+receiveJsonpData({
+"cols": [
+{"label": "Run", "type": "string"},
+{"label": "Custom key", "type": "string"},
+{"label": "Timestamp", "type": "string"},
+{"label": "testMergeSort", "type": "string"} ,
+{"label": "testQuickSort", "type": "string"} ],
+"rows": [
+{"c": [{"v": "72"}, {"v": "AddBenchMark"}, {"v": "2023-03-09 14:07:27.927"}, {"v": 0.002}, {"v": 0}]},
+{"c": [{"v": "73"}, {"v": "AddBenchMark"}, {"v": "2023-03-09 14:07:38.513"}, {"v": 0.001}, {"v": 0}]},
+{"c": [{"v": "74"}, {"v": "AddBenchMark"}, {"v": "2023-03-09 14:07:41.069"}, {"v": 0.001}, {"v": 0}]},
+{"c": [{"v": "75"}, {"v": "AddBenchMark"}, {"v": "2023-03-09 14:09:19.505"}, {"v": null}, {"v": 0.001}]},
+{"c": [{"v": "76"}, {"v": "AddBenchMark"}, {"v": "2023-03-09 14:09:21.751"}, {"v": 0.001}, {"v": null}]},
+{"c": [{"v": "77"}, {"v": "AddBenchMark"}, {"v": "2023-03-09 14:09:24.079"}, {"v": null}, {"v": 0.001}]},
+{"c": [{"v": "78"}, {"v": "AddBenchMark"}, {"v": "2023-03-09 14:09:26.556"}, {"v": 0.001}, {"v": null}]},
+{"c": [{"v": "79"}, {"v": "AddBenchMark"}, {"v": "2023-03-09 14:09:37.301"}, {"v": null}, {"v": 0.001}]}
+]});
