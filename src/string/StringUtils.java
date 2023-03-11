@@ -10,4 +10,9 @@ public class StringUtils {
         ValidPalindrome validPalindrome = new ValidPalindrome(in);
         return validPalindrome.run();
     }
+
+    static String minWindow(String s, String t) {
+        MinWindow minWindow = new MinWindow(s, t);
+        return minWindow.run();
+    }
 }

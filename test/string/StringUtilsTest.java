@@ -22,4 +22,10 @@ public class StringUtilsTest {
         assertFalse(StringUtils.validPalindrome("abeda"));
         assertFalse(StringUtils.validPalindrome("abcccdea"));
     }
+
+    @Test
+    public void testMinWindow() throws Exception {
+        String actual = StringUtils.minWindow("ADDBANCAD", "ABC");
+        System.out.println(actual);
+    }
 } 
