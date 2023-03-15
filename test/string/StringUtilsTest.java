@@ -26,6 +26,9 @@ public class StringUtilsTest {
     @Test
     public void testMinWindow() throws Exception {
         String actual = StringUtils.minWindow("ADDBANCAD", "ABC");
-        System.out.println(actual);
+        assertEquals("BANC", actual);
+
+        String actual2 = StringUtils.minWindow("ABAACBAB", "ABC");
+        assertEquals("ACB", actual2);
     }
 } 
