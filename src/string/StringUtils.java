@@ -15,4 +15,9 @@ public class StringUtils {
         MinWindow minWindow = new MinWindow(s, t);
         return minWindow.run();
     }
+
+    static String longestCommonPrefix(String[] in) {
+        LongestCommonPrefix lcp = new LongestCommonPrefix(in);
+        return lcp.run();
+    }
 }

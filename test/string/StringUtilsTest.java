@@ -31,4 +31,15 @@ public class StringUtilsTest {
         String actual2 = StringUtils.minWindow("ABAACBAB", "ABC");
         assertEquals("ACB", actual2);
     }
+
+    @Test
+    public void longestCommonPrefix() throws Exception {
+        String[] input = new String[]{"flower", "flow", "flownlp", "flowcv"};
+        String actual = StringUtils.longestCommonPrefix(input);
+        assertEquals("flow", actual);
+
+        String[] input_2 = new String[]{"a", "b", "c", "d"};
+        String actual_2 = StringUtils.longestCommonPrefix(input_2);
+        assertEquals("", actual_2);
+    }
 } 
