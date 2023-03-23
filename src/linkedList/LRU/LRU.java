@@ -12,6 +12,9 @@ public class LRU {
         this.cache = new DoubleList();
     }
 
+    /**
+     * Update the poi of the owning node in the cache before returning.
+     */
     public Integer get(Integer key) {
         if (!this.map.containsKey(key)) return -1;
         Integer out = this.map.get(key).value;
@@ -19,8 +22,13 @@ public class LRU {
         return out;
     }
 
+    /**
+     * For updating the cache.
+     * 1st to remove the used node from the cache (double list),
+     * then add the new node to the head of the cache,
+     * and update the node in the hashmap.
+     */
     public void put(Integer key, Integer value) {
-        Node<Integer> node = new Node<>(key, value);
 
         if (this.map.containsKey(key)) {
             this.cache.remove(this.map.get(key));
@@ -31,7 +39,8 @@ public class LRU {
             this.map.remove(last.key);
         }
 
-        cache.addFirst(node);
-        map.put(key, node);
+        Node<Integer> node = new Node<>(key, value);
+        this.cache.addFirst(node);
+        this.map.put(key, node);
     }
 }
