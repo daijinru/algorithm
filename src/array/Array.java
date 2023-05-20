@@ -5,4 +5,6 @@ public class Array<T extends Object> {
     public Array(T value) {
         this.value = value;
     }
+
+    public Array() {}
 }
