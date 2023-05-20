@@ -1,23 +1,23 @@
 package array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoSum extends Array<int[]>{
     int target;
-    public TwoSum() {
-        super();
+    public TwoSum(int[] in, int target) {
+        super(in);
+        this.target = target;
     }
 
-    public int[] runSorted(int[] sorted, int target) {
-        int i = 0;
-        int j = sorted.length - 1;
-        while (i < j && sorted[i] + sorted[j] != target) {
-            if (sorted[i] + sorted[j] > target) {
-                j --;
-            } else {
-                i ++;
+    public int[] run() {
+        Map<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
+        for (int i = 0; i < value.length; i++) {
+            if (hashmap.containsKey(target - value[i])) {
+                return new int[]{hashmap.get(target - value[i]), i};
             }
+            hashmap.put(value[i], i);
         }
-        return new int[]{i, j};
+        return new int[0];
     }
-
-
 }
